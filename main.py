@@ -3,6 +3,7 @@ import asyncio
 from chatbot import chat_with_ai
 from speaker import speak
 from config import ASSISTANT_NAME
+from commands.battery_commands import get_battery
 
 from commands.features import get_time, get_date
 
@@ -106,6 +107,8 @@ def main():
                 reply = f"Searching YouTube for {query}"
             else:
                 reply = "Please tell me what to search."
+        elif user_input=="battery" or user_input=="battery percentage":
+            reply = get_battery()    
 
         # ---------- AI ----------
 
