@@ -3,9 +3,11 @@ import asyncio
 from chatbot import chat_with_ai
 from speaker import speak
 from config import ASSISTANT_NAME
+
+from commands.features import get_time, get_date
 from commands.battery_commands import get_battery
 from commands.screenshot_commands import take_screenshot
-from commands.features import get_time, get_date
+from commands.weather_commands import get_weather
 
 from commands.system_commands import (
     open_notepad,
@@ -27,24 +29,66 @@ from commands.web_commands import (
 
 
 def main():
+
     print(f"{ASSISTANT_NAME} Started!")
     print("Type 'exit' to quit.\n")
 
     while True:
+
         user_input = input("You: ").strip().lower()
 
         if user_input in ["exit", "quit", "bye"]:
-            print(f"{ASSISTANT_NAME}: Goodbye!")
-            asyncio.run(speak("Goodbye!"))
+            reply = "Goodbye!"
+            print(f"{ASSISTANT_NAME}: {reply}")
+            asyncio.run(speak(reply))
             break
 
+        # Greetings
+
+        elif user_input == "hello":
+            reply = "Hello Armaan! How can I help you?"
+
+        elif user_input == "hi":
+            reply = "Hi Armaan! How can I help you?"
+
+        elif user_input == "hello vaani":
+            reply = "Yes Armaan, I am listening."
+
+        elif user_input == "hey vaani":
+            reply = "Yes Armaan, tell me what you need."
+
         # Time
-        if "time" == user_input:
+
+        elif user_input == "time":
             reply = get_time()
 
         # Date
-        elif "date" == user_input:
+
+        elif user_input == "date":
             reply = get_date()
+
+        # Weather
+
+        elif user_input == "weather":
+            reply = get_weather()
+
+        elif user_input.startswith("weather in"):
+            city = user_input.replace("weather in", "").strip()
+
+            if city:
+                reply = get_weather(city)
+            else:
+                reply = "Please tell me the city name."
+
+        # Battery
+
+        elif user_input in ["battery", "battery percentage"]:
+            reply = get_battery()
+
+        # Screenshot
+
+        elif user_input in ["screenshot", "take screenshot"]:
+            reply = take_screenshot()
 
         # ---------- System Commands ----------
 
@@ -107,12 +151,8 @@ def main():
                 reply = f"Searching YouTube for {query}"
             else:
                 reply = "Please tell me what to search."
-        elif user_input=="battery" or user_input=="battery percentage":
-            reply = get_battery()    
-        elif user_input=="screenshot" or user_input=="take screenshot":
-            reply=take_screenshot()   
 
-        # ---------- AI ----------
+        # AI
 
         else:
             reply = chat_with_ai(user_input)
