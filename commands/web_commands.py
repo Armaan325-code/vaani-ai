@@ -1,29 +1,30 @@
 import webbrowser
 
+GOOGLE_URL = "https://google.com"
+YOUTUBE_URL = "https://youtube.com"
+GITHUB_URL = "https://github.com"
+GMAIL_URL = "https://mail.google.com"
+
 
 def open_google():
-    webbrowser.open("https://google.com")
+    webbrowser.open(GOOGLE_URL)
 
 
 def open_youtube():
-    webbrowser.open("https://youtube.com")
+    webbrowser.open(YOUTUBE_URL)
 
 
 def open_github():
-    webbrowser.open("https://github.com")
+    webbrowser.open(GITHUB_URL)
 
 
 def open_gmail():
-    webbrowser.open("https://mail.google.com")
+    webbrowser.open(GMAIL_URL)
 
 
 def search_google(query):
-    webbrowser.open(
-        f"https://www.google.com/search?q={query}"
-    )
+    webbrowser.open(f"https://www.google.com/search?q={query}")
 
 
 def search_youtube(query):
-    webbrowser.open(
-        f"https://www.youtube.com/results?search_query={query}"
-    )
+    webbrowser.open(f"https://www.youtube.com/results?search_query={query}")

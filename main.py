@@ -8,6 +8,7 @@ from commands.features import get_time, get_date
 from commands.battery_commands import get_battery
 from commands.screenshot_commands import take_screenshot
 from commands.weather_commands import get_weather
+from commands.help_commands import get_help
 
 from commands.system_commands import (
     open_notepad,
@@ -43,20 +44,6 @@ def main():
             asyncio.run(speak(reply))
             break
 
-        # Greetings
-
-        elif user_input == "hello":
-            reply = "Hello Armaan! How can I help you?"
-
-        elif user_input == "hi":
-            reply = "Hi Armaan! How can I help you?"
-
-        elif user_input == "hello vaani":
-            reply = "Yes Armaan, I am listening."
-
-        elif user_input == "hey vaani":
-            reply = "Yes Armaan, tell me what you need."
-
         # Time
 
         elif user_input == "time":
@@ -66,6 +53,9 @@ def main():
 
         elif user_input == "date":
             reply = get_date()
+
+        elif user_input=="help":
+            reply = get_help()   
 
         # Weather
 
