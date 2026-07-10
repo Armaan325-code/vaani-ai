@@ -2,6 +2,7 @@ import asyncio
 
 from chatbot import chat_with_ai
 from speaker import speak
+from listener import listen
 from config import ASSISTANT_NAME
 
 from commands.features import get_time, get_date
@@ -34,9 +35,17 @@ def main():
     print(f"{ASSISTANT_NAME} Started!")
     print("Type 'exit' to quit.\n")
 
+    mode = input("Choose mode (voice/text): ").strip().lower()
+
     while True:
 
-        user_input = input("You: ").strip().lower()
+        if mode == "voice":
+            user_input = listen().strip().lower()
+
+            if not user_input:
+                continue
+        else:
+            user_input = input("You: ").strip().lower()
 
         if user_input in ["exit", "quit", "bye"]:
             reply = "Goodbye!"
@@ -45,20 +54,18 @@ def main():
             break
 
         # Time
-
         elif user_input == "time":
             reply = get_time()
 
         # Date
-
         elif user_input == "date":
             reply = get_date()
 
-        elif user_input=="help":
-            reply = get_help()   
+        # Help
+        elif user_input == "help":
+            reply = get_help()
 
         # Weather
-
         elif user_input == "weather":
             reply = get_weather()
 
@@ -71,12 +78,10 @@ def main():
                 reply = "Please tell me the city name."
 
         # Battery
-
         elif user_input in ["battery", "battery percentage"]:
             reply = get_battery()
 
         # Screenshot
-
         elif user_input in ["screenshot", "take screenshot"]:
             reply = take_screenshot()
 
@@ -142,7 +147,7 @@ def main():
             else:
                 reply = "Please tell me what to search."
 
-        # AI
+        # ---------- AI ----------
 
         else:
             reply = chat_with_ai(user_input)
