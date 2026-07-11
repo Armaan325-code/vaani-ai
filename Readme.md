@@ -1,36 +1,49 @@
-# 🤖 Vaani AI
+<h1 align="center">🤖 Vaani AI</h1>
 
-## About
+<p align="center">
+  <b>Python Desktop Voice Assistant</b>
+</p>
 
-Vaani AI is my Python desktop voice assistant project. I developed this project to learn Python, AI and automation. It can perform basic desktop tasks and answer questions using Google Gemini AI.
+<p align="center">
 
----
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Features
-
-- Voice Input
-- Voice Output
-- AI Chat using Google Gemini
-- Current Time
-- Current Date
-- Battery Percentage
-- Take Screenshot
-- Open Notepad
-- Open Calculator
-- Open Paint
-- Open Command Prompt
-- Open File Explorer
-- Open Downloads Folder
-- Open Google
-- Open YouTube
-- Open GitHub
-- Open Gmail
-- Search on Google
-- Search on YouTube
+</p>
 
 ---
 
-## Technologies Used
+# 📖 About
+
+Vaani AI is my Python desktop voice assistant project. It can perform desktop tasks and answer questions using Google Gemini AI.
+
+---
+
+# ✨ Features
+
+- 🎤 Voice Input
+- 🔊 Voice Output
+- 🤖 AI Chat
+- 🕒 Time
+- 📅 Date
+- 🌦️ Weather
+- 🔋 Battery Percentage
+- 📸 Screenshot
+- 📝 Open Notepad
+- 🧮 Open Calculator
+- 🎨 Open Paint
+- 📂 File Explorer
+- 🌐 Open Google
+- ▶️ Open YouTube
+- 📧 Open Gmail
+- 🔍 Google Search
+- 🎬 YouTube Search
+
+---
+
+# 🛠️ Technologies
 
 - Python
 - Google Gemini AI
@@ -42,7 +55,7 @@ Vaani AI is my Python desktop voice assistant project. I developed this project 
 
 ---
 
-## Installation
+# 🚀 Installation
 
 ```bash
 git clone https://github.com/Armaan325-code/vaani-ai.git
@@ -50,9 +63,7 @@ cd vaani-ai
 pip install -r requirements.txt
 ```
 
----
-
-## Run Project
+# ▶️ Run
 
 ```bash
 python main.py
@@ -60,19 +71,18 @@ python main.py
 
 ---
 
-## Future Improvements
+# 🔮 Future Improvements
 
-- Wake Word Support
-- Better Memory
-- Music Player
-- Notes
+- Wake Word
 - GUI Interface
+- Music Player
+- Better Memory
+- Notes
 
 ---
 
-## Author
+# 👨‍💻 Author
 
 **Armaan**
 
-GitHub:
-https://github.com/Armaan325-code
+GitHub: **https://github.com/Armaan325-code**
