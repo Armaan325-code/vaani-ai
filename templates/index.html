@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaani AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🤖 Vaani AI</h1>
+
+    <p>Your Personal AI Assistant</p>
+
+    <form action="/chat" method="POST">
+
+        <input
+            type="text"
+            name="message"
+            placeholder="Ask me anything..."
+            required
+        >
+
+        <button type="submit">
+            Send
+        </button>
+        <button type="button" id="mic-btn">🎤 Speak</button>
+
+        </button>
+
+    </form>
+    {% if user_message %}
+    <div class="chat-box">
+
+    <h3>You:</h3>
+    <p>{{ user_message }}</p>
+    <h3>Vaani AI:</h3>
+    <p>{{ reply }}</p>
+
+    </div>
+    {% endif %}
+
+</div>
+<script>
+const mic = document.getElementById("mic-btn");
+
+mic.addEventListener("click", () => {
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.lang = "en-IN";
+
+    recognition.start();
+
+    recognition.onresult = function(event) {
+
+        document.querySelector("input[name='message']").value =
+        event.results[0][0].transcript;
+
+    };
+
+});
+</script>
+</body>
+</html>
