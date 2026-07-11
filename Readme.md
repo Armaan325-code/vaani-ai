@@ -1,32 +1,36 @@
 # 🤖 Vaani AI
 
-Vaani AI is a Python-based desktop voice assistant that can understand voice commands, reply using AI, and perform useful system tasks.
+## About
+
+Vaani AI is my Python desktop voice assistant project. I developed this project to learn Python, AI and automation. It can perform basic desktop tasks and answer questions using Google Gemini AI.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎤 Voice Input
-- 🔊 Voice Output
-- 🤖 AI Chat (Google Gemini)
-- 🔋 Battery Percentage
-- 📸 Take Screenshot
-- 🕒 Current Time
-- 📅 Current Date
-- 🌐 Open Google
-- ▶️ Open YouTube
-- 📧 Open Gmail
-- 💻 Open Notepad
-- 🧮 Open Calculator
-- 🎨 Open Paint
-- 📂 Open File Explorer
-- 📥 Open Downloads Folder
-- 🔍 Search Google
-- 🎬 Search YouTube
+- Voice Input
+- Voice Output
+- AI Chat using Google Gemini
+- Current Time
+- Current Date
+- Battery Percentage
+- Take Screenshot
+- Open Notepad
+- Open Calculator
+- Open Paint
+- Open Command Prompt
+- Open File Explorer
+- Open Downloads Folder
+- Open Google
+- Open YouTube
+- Open GitHub
+- Open Gmail
+- Search on Google
+- Search on YouTube
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python
 - Google Gemini AI
@@ -38,7 +42,7 @@ Vaani AI is a Python-based desktop voice assistant that can understand voice com
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ```bash
 git clone https://github.com/Armaan325-code/vaani-ai.git
@@ -48,7 +52,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run
+## Run Project
 
 ```bash
 python main.py
@@ -56,19 +60,17 @@ python main.py
 
 ---
 
-## 📌 Upcoming Features
+## Future Improvements
 
-- 🎙️ Wake Word ("Hello Vaani")
-- 🌦️ Weather
-- 📝 Notes
-- 🎵 Music Player
-- 📂 File Search
-- 🧠 Memory
-- 🎨 GUI Interface
+- Wake Word Support
+- Better Memory
+- Music Player
+- Notes
+- GUI Interface
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Armaan**
 
