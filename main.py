@@ -29,6 +29,100 @@ from commands.web_commands import (
     search_youtube
 )
 
+def process_message(user_input):
+
+    user_input = user_input.strip().lower()
+
+    if user_input in ["exit", "quit", "bye"]:
+        return "Goodbye!"
+
+    elif user_input == "time":
+        return get_time()
+
+    elif user_input == "date":
+        return get_date()
+
+    elif user_input == "help":
+        return get_help()
+
+    elif user_input == "weather":
+        return get_weather()
+
+    elif user_input.startswith("weather in"):
+        city = user_input.replace("weather in", "").strip()
+
+        if city:
+            return get_weather(city)
+        else:
+            return "Please tell me the city name."
+
+    elif user_input in ["battery", "battery percentage"]:
+        return get_battery()
+
+    elif user_input in ["screenshot", "take screenshot"]:
+        return take_screenshot()
+
+    # ---------- System Commands ----------
+
+    elif user_input == "open notepad":
+        open_notepad()
+        return "Opening Notepad"
+
+    elif user_input == "open calculator":
+        open_calculator()
+        return "Opening Calculator"
+
+    elif user_input == "open paint":
+        open_paint()
+        return "Opening Paint"
+
+    elif user_input == "open cmd":
+        open_cmd()
+        return "Opening Command Prompt"
+
+    elif user_input == "open explorer":
+        open_explorer()
+        return "Opening File Explorer"
+
+    elif user_input == "open downloads":
+        open_downloads()
+        return "Opening Downloads Folder"
+
+    # ---------- Web Commands ----------
+
+    elif user_input == "open google":
+        open_google()
+        return "Opening Google"
+
+    elif user_input == "open youtube":
+        open_youtube()
+        return "Opening YouTube"
+
+    elif user_input == "open github":
+        open_github()
+        return "Opening GitHub"
+
+    elif user_input == "open gmail":
+        open_gmail()
+        return "Opening Gmail"
+
+    elif user_input.startswith("search google"):
+        query = user_input.replace("search google", "").strip()
+
+        if query:
+            search_google(query)
+            return f"Searching Google for {query}"
+        return "Please tell me what to search."
+
+    elif user_input.startswith("search youtube"):
+        query = user_input.replace("search youtube", "").strip()
+
+        if query:
+            search_youtube(query)
+            return f"Searching YouTube for {query}"
+        return "Please tell me what to search."
+
+    return chat_with_ai(user_input)
 
 def main():
 

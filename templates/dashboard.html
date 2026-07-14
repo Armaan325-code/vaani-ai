@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaani AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="sidebar">
+
+        <h2>🤖 Vaani AI</h2>
+
+        <button class="new-chat" onclick="window.location.href='/new_chat'">
+    + New Chat
+</button>
+<button class="logout"
+onclick="window.location.href='/logout'">
+Logout
+</button>
+
+       <div class="history">
+
+    {% for chat in chats %}
+
+        <p>{{ chat[0] }}</p>
+
+    {% endfor %}
+
+</div>
+
+    </div>
+
+    <div class="chat-area">
+
+        <div class="messages">
+
+            {% if user_message %}
+
+                <div class="user-message">
+                    <strong>You</strong>
+                    <p>{{ user_message }}</p>
+                </div>
+
+                <div class="ai-message">
+                    <strong>🤖 Vaani AI</strong>
+                    <p>{{ reply }}</p>
+                </div>
+
+            {% else %}
+
+                <h1>Welcome to Vaani AI</h1>
+                <p>Start chatting...</p>
+
+            {% endif %}
+
+        </div>
+
+        <form action="/chat" method="POST" class="input-area">
+
+            <input
+                type="text"
+                name="message"
+                placeholder="Message Vaani AI..."
+                required
+            >
+
+            <button onclick="startListening()">🎤</button>
+
+            <button type="submit">
+                Send
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

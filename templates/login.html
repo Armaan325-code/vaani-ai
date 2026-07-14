@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vaani AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page">
+
+<div class="auth-container">
+
+    <div class="auth-left">
+        <img src="{{ url_for('static', filename='robot.jpg.jpg') }}" alt="Robot" class="robot-image">
+    </div>
+
+    <div class="auth-right">
+
+        <div class="auth-card">
+
+            <h1>🤖 Vaani AI</h1>
+
+            <p>Welcome Back!</p>
+
+            <form action="/login" method="POST">
+
+                <input
+                    class="auth-input"
+                    type="text"
+                    name="username"
+                    placeholder="Enter Username"
+                    required
+                >
+
+                <input
+                    class="auth-input"
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    required
+                >
+
+                <button class="auth-btn" type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="auth-text">
+                Don't have an account?
+                <a href="/signup">Sign Up</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
