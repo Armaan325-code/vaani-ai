@@ -9,77 +9,138 @@
 </head>
 
 <body>
-
 <div class="app">
 
-    <div class="sidebar">
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-        <h2>🤖 Vaani AI</h2>
+        <div class="logo">
+            <h2>🤖 Vaani AI</h2>
+            <p>Your Smart AI Assistant</p>
+        </div>
 
-        <button class="new-chat" onclick="window.location.href='/new_chat'">
-    + New Chat
-</button>
-<button class="logout"
-onclick="window.location.href='/logout'">
-Logout
-</button>
+        <div class="sidebar-buttons">
 
-       <div class="history">
+            <button class="new-chat"
+                onclick="window.location.href='/new_chat'">
+                ➕ New Chat
+            </button>
 
-    {% for chat in chats %}
+            <button class="logout"
+                onclick="window.location.href='/logout'">
+                🚪 Logout
+            </button>
 
-        <p>{{ chat[0] }}</p>
+        </div>
 
-    {% endfor %}
+        <h3 class="history-title">
+            Chat History
+        </h3>
 
-</div>
+        <div class="history">
+
+            {% for chat in chats %}
+
+            <p>{{ chat[0] }}</p>
+
+            {% endfor %}
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Area -->
+
+    <main class="chat-area">
+
+        <div class="hero">
+
+    <div class="hero-text">
+
+        <span class="hero-tag">🚀 AI Powered Assistant</span>
+
+        <h1>
+            Talk To The <span>Future</span>
+        </h1>
+
+        <p>
+            Welcome to <b>Vaani AI</b>.<br>
+            Ask questions, automate tasks, generate code,
+            and get instant AI-powered responses.
+        </p>
 
     </div>
 
-    <div class="chat-area">
+    <div class="hero-image">
+
+        <img src="{{ url_for('static', filename='robot.jpg.jpg') }}"
+             alt="Vaani AI Robot">
+
+    </div>
+
+</div>
+
+        
+
 
         <div class="messages">
 
             {% if user_message %}
 
-                <div class="user-message">
-                    <strong>You</strong>
-                    <p>{{ user_message }}</p>
-                </div>
+            <div class="user-message">
 
-                <div class="ai-message">
-                    <strong>🤖 Vaani AI</strong>
-                    <p>{{ reply }}</p>
-                </div>
+                <strong>You</strong>
 
-            {% else %}
+                <p>{{ user_message }}</p>
 
-                <h1>Welcome to Vaani AI</h1>
-                <p>Start chatting...</p>
+            </div>
+
+            <div class="ai-message">
+
+                <strong>🤖 Vaani AI</strong>
+
+                <p>{{ reply }}</p>
+
+            </div>
 
             {% endif %}
 
         </div>
 
-        <form action="/chat" method="POST" class="input-area">
+
+        <form action="/chat"
+              method="POST"
+              class="input-area">
 
             <input
                 type="text"
                 name="message"
-                placeholder="Message Vaani AI..."
+                placeholder="Ask Vaani AI anything..."
                 required
             >
 
-            <button type="button" onclick="startListening()">🎤</button>
+            <button
+                type="button"
+                onclick="startListening()">
 
-            <button type="submit">Send</button>
+                🎤
+
+            </button>
+
+            <button
+                type="submit">
+
+                ➜
+
+            </button>
+
         </form>
 
-    </div>
+    </main>
 
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-
 </body>
 </html>
