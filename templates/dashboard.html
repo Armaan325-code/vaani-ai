@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaani AI</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
 
 <body>
@@ -70,12 +70,9 @@ Logout
                 required
             >
 
-            <button onclick="startListening()">🎤</button>
+            <button type="button" onclick="startListening()">🎤</button>
 
-            <button type="submit">
-                Send
-            </button>
-
+            <button type="submit">Send</button>
         </form>
 
     </div>
